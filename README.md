@@ -1,3 +1,7 @@
  # dotfiles
 
-テスト.
+以下の環境ファイル
+
+* vim
+* tmux
+* bash
