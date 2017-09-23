@@ -2,6 +2,25 @@
 
 if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
-  tmux
+fi
+
+if [[ ! -n $TMUX ]]; then
+  # get the IDs
+  ID="`tmux list-sessions`"
+  if [[ -z "$ID" ]]; then
+    tmux new-session
+  fi
+  new="new"
+  ID="$new:
+$ID"
+  ID="`echo "$ID" | fzf | cut -d: -f1`"
+  echo "$ID"
+  if [[ $ID = $new ]]; then
+    tmux new-session
+  elif [[ -n "$ID" ]]; then
+    tmux attach-session -t "$ID"
+  else
+    :  # Start terminal normally
+  fi
 fi
 

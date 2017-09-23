@@ -5,10 +5,13 @@ set modelines=0		" CVE-2007-2438
 " " remove change the following statements
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=2		" more powerful backspacing
-set tabstop=4		" tab = 2 space"
-set shiftwidth=2
+set tabstop=4		" tab = 4 space"
+set shiftwidth=4
 set expandtab
 set clipboard+=unnamed
+set number
+set cursorline
+highlight CursorLine cterm=NONE ctermfg=white ctermbg=black
 " " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " " Don't write backup file if vim is being called by "chpass"
@@ -17,6 +20,9 @@ colorscheme molokai
 syntax on
 
 " 色の設定
+highlight Comment ctermfg=103
+highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
+highlight Number ctermfg=202
 
 " キーバインドの設定
 " "左端,右端に移動
@@ -177,5 +183,5 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1 
+let g:indent_guides_start_level = 2 
