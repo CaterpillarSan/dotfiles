@@ -62,6 +62,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
