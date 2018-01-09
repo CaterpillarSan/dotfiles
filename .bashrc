@@ -23,5 +23,4 @@ alias cdjava='cd /Users/caterpillar/Desktop/Labo/javassist'
 alias cdd='cd ~/Desktop/DCatch'
 alias cdh='cd ~/Desktop/HBase'
 # プロンプトの設定
-export PS1='\e[36m\]ヽ|´ ｀*ξ|ﾉ \e[34m\][\w]  \e[37m\]\n\$ \[\e[0m\]'
-# export PS1='\[\033[34m\][\w]\n\$\[\033[0m\] '
+export PS1='\e[32m\][\w]  \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
