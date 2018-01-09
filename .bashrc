@@ -9,9 +9,9 @@ alias la='ls -laG'
 alias classname='command ls Jikken | grep -o .*\.class | sed -e s/.class//g | tr '\n'' 
 
 # javassist関連
-alias javassistc='javac -classpath ".:/Users/caterpillar/javassist/javassist.jar"'
+alias javassistc='javac -classpath ".:./javassist.jar"'
 
-alias javassist='java -classpath ".:/Users/caterpillar/javassist/javassist.jar"'
+alias javassist='java -classpath ".:./javassist.jar"'
 
 alias testjava='java -classpath ".:/Users/caterpillar/Desktop/DCatch/myTrace"'
 
@@ -20,7 +20,8 @@ alias cdc='cd /Users/caterpillar/Desktop/MyCodes'
 alias cdr='cd /Users/caterpillar/Desktop/MyCodes/ronbun'
 alias cds='cd /Users/caterpillar/Desktop/Labo/Share'
 alias cdjava='cd /Users/caterpillar/Desktop/Labo/javassist'
-alias cdd='cd /Users/caterpillar/Desktop/DCatch'
+alias cdd='cd ~/Desktop/DCatch'
+alias cdh='cd ~/Desktop/HBase'
 # プロンプトの設定
 export PS1='\e[36m\]ヽ|´ ｀*ξ|ﾉ \e[34m\][\w]  \e[37m\]\n\$ \[\e[0m\]'
 # export PS1='\[\033[34m\][\w]\n\$\[\033[0m\] '
