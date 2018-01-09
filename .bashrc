@@ -13,7 +13,6 @@ alias javassistc='javac -classpath ".:./javassist.jar"'
 
 alias javassist='java -classpath ".:./javassist.jar"'
 
-alias testjava='java -classpath ".:/Users/caterpillar/Desktop/DCatch/myTrace"'
 
 # cd
 alias cdc='cd /Users/caterpillar/Desktop/MyCodes'
