@@ -1,0 +1,8 @@
+" escapeをCtr+Jに
+noremap <C-j>   <esc>
+imap    <C-j>   <esc>
+
+" 左端, 右端に移動
+noremap <S-h>   ^
+noremap <S-l>   $
+

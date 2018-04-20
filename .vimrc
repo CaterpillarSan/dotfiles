@@ -1,5 +1,5 @@
 " Configuration file for vim
-set modelines=0		" CVE-2007-2438
+" set modelines=0		" CVE-2007-2438
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " " remove change the following statements
@@ -7,7 +7,6 @@ set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=2		" more powerful backspacing
 set tabstop=4		" tab = 4 space"
 set shiftwidth=4
-set expandtab
 set clipboard+=unnamed
 set number
 set cursorline
@@ -41,15 +40,16 @@ set scrolloff=8                "上下8行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
 set laststatus=2
+
+
 " Neobundle関係
 filetype plugin indent off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle'))
 endif 
 
-"call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -182,14 +182,16 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " *********************************************:
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 let g:indent_guides_guide_size = 1 
-let g:indent_guides_start_level = 2 
+let g:indent_guides_start_level = 1 
 
 " *********************************************:
 " NERDTree
 " *********************************************:
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree 
+let NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.class$']
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
