@@ -10,35 +10,36 @@ set shiftwidth=4
 set clipboard+=unnamed
 set number
 set cursorline
-highlight CursorLine cterm=NONE ctermfg=white ctermbg=black
 " " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
-colorscheme molokai
 syntax on
 
 " 色の設定
-highlight Comment ctermfg=103
+colorscheme molokai
+highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+highlight Cursor ctermfg=green ctermbg=NONE
+highlight Comment ctermfg=35
 highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
 highlight Number ctermfg=202
 
 " キーバインドの設定
 " "左端,右端に移動
-noremap <S-h>   ^
-noremap <S-l>   $
+noremap <S-h>	^
+noremap <S-l>	$
 " "escapeをC+jに
-noremap <C-j>   <esc>
-imap    <C-j>   <esc>
+noremap <C-j>	<esc>
+imap	<C-j>	<esc>
 
 " マウス操作設定
-set mouse=a                    "マウス使用可能
-set ttymouse=xterm2            "スクロール可能
+set mouse=a					   "マウス使用可能
+set ttymouse=xterm2			   "スクロール可能
 set backspace=indent,eol,start "Backspaceキーの影響範囲に制限を設けない
 set whichwrap=b,s,h,l,<,>,[,] "行頭行末の左右移動で行をまたぐ
-set scrolloff=8                "上下8行の視界を確保
-set sidescrolloff=16           " 左右スクロール時の視界を確保
-set sidescroll=1               " 左右スクロールは一文字づつ行う
+set scrolloff=8				   "上下8行の視界を確保
+set sidescrolloff=16		   " 左右スクロール時の視界を確保
+set sidescroll=1			   " 左右スクロールは一文字づつ行う
 set laststatus=2
 
 
@@ -73,46 +74,46 @@ filetype plugin indent on
 " * lightline環境
 " *********************************************:
 let lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
+		\ 'colorscheme': 'wombat',
+		\ 'mode_map': {'c': 'NORMAL'},
+		\ 'active': {
+		\	'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+		\ },
+		\ 'component_function': {
+		\	'modified': 'LightlineModified',
+		\	'readonly': 'LightlineReadonly',
+		\	'fugitive': 'LightlineFugitive',
+		\	'filename': 'LightlineFilename',
+		\	'fileformat': 'LightlineFileformat',
+		\	'filetype': 'LightlineFiletype',
+		\	'fileencoding': 'LightlineFileencoding',
+		\	'mode': 'LightlineMode'
+		\ }
+		\ }
 
 function! LightlineModified()
-    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+	return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! LightlineReadonly()
-    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+	return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
 endfunction
 
 function! LightlineFilename()
-    return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-          \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-          \  &ft == 'unite' ? unite#get_status_string() :
-          \  &ft == 'vimshell' ? vimshell#get_status_string() :
-          \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-          \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+	return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+		  \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+		  \  &ft == 'unite' ? unite#get_status_string() :
+		  \  &ft == 'vimshell' ? vimshell#get_status_string() :
+		  \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+		  \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
 
 function! LightlineFugitive()
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-          return fugitive#head()
-           else
-          return ''
-    endif
+	if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+		  return fugitive#head()
+		   else
+		  return ''
+	endif
 endfunction
 
 function! LightlineFileformat()
@@ -120,15 +121,15 @@ function! LightlineFileformat()
 endfunction
 
 function! LightlineFiletype()
-     return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+	 return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 function! LightlineFileencoding()
-     return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+	 return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
 function! LightlineMode()
-    return winwidth(0) > 60 ? lightline#mode() : ''
+	return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
 " *********************************************:
@@ -148,7 +149,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+	let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -160,9 +161,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k>	   <Plug>(neosnippet_expand_or_jump)
+smap <C-k>	   <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>	   <Plug>(neosnippet_expand_target)
 "  
  " SuperTab like snippets behavior.
  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
@@ -174,7 +175,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
   
   " For snippet_complete marker.
  if has('conceal')
-    set conceallevel=2 concealcursor=i
+	set conceallevel=2 concealcursor=i
  endif
  
 " *********************************************:
@@ -182,7 +183,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " *********************************************:
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd	guibg=red	ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 let g:indent_guides_guide_size = 1 
 let g:indent_guides_start_level = 1 
@@ -190,7 +191,15 @@ let g:indent_guides_start_level = 1
 " *********************************************:
 " NERDTree
 " *********************************************:
-autocmd vimenter * NERDTree 
+
+" 開始時のカーソル位置を,NERDTreeではなくファイル側にする
+function s:MoveToFile()
+	call feedkeys("\<Space>")
+	call feedkeys("\<C-w>")
+	call feedkeys("\w")
+endfunction
+
+autocmd vimenter * NERDTree | call s:MoveToFile()
 let NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.class$']

@@ -6,6 +6,10 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 
+cd () {
+	builtin cd "$@" && ls
+}
+
 alias classname='command ls Jikken | grep -o .*\.class | sed -e s/.class//g | tr '\n'' 
 
 # javassist関連
@@ -13,8 +17,8 @@ alias javassistc='javac -classpath ".:./javassist.jar"'
 
 alias javassist='java -classpath ".:./javassist.jar"'
 # cloudsim
-alias javacsim=' javac -classpath .:~/Desktop/Simulation/cloudsim_jar/cloudsim.jar'
-alias javasim=' java -classpath .:~/Desktop/Simulation/cloudsim_jar/cloudsim.jar'
+alias javacsim=' javac -classpath ".:cloudsim_jar/cloudsim.jar"'
+alias javasim=' java -classpath ".:cloudsim_jar/cloudsim.jar"'
 
 
 # cd

@@ -16,6 +16,7 @@ $ID"
   ID="`echo "$ID" | fzf | cut -d: -f1`"
   echo "$ID"
   if [[ $ID = $new ]]; then
+	cd ~/Desktop
     tmux new-session
   elif [[ -n "$ID" ]]; then
     tmux attach-session -t "$ID" -d
