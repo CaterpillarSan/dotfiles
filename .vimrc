@@ -25,12 +25,16 @@ highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
 highlight Number ctermfg=202
 
 " キーバインドの設定
-" "左端,右端に移動
-noremap <S-h>	^
-noremap <S-l>	$
-" "escapeをC+jに
-noremap <C-j>	<esc>
+" 左端,右端に移動
+noremap <C-h>	^
+noremap <C-l>	$
+noremap <C-k> <C-u>
+noremap <C-j> <C-d>
+" escapeをC+jに
+"noremap <C-j>	<esc>
 imap	<C-j>	<esc>
+" USkey対策 ; -> :
+noremap ; :
 
 " マウス操作設定
 set mouse=a					   "マウス使用可能
