@@ -68,6 +68,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'prettier/vim-prettier'
 
 call neobundle#end()
 
@@ -208,3 +210,11 @@ let NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.class$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" *********************************************:
+" * Priettier環境
+" *********************************************:
+
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_path = "/usr/local/var/nodebrew/node/v10.8.0/lib/node_modules/prettier"
+autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync

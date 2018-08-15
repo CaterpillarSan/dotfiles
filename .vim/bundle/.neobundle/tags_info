@@ -6,3 +6,7 @@ neocomplete.vim
 neosnippet
 neosnippet-snippets
 neosnippet.vim
+nerdtree
+vim-go
+vim-indent-guides
+vim-prettier
