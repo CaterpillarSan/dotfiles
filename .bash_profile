@@ -26,7 +26,4 @@ $ID"
 fi
 
 
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-export PATH=$PATH:$GOPATH/bin
-export PATH=/usr/local/opt/openssl/bin:$PATH
+

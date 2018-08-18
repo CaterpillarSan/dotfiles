@@ -31,6 +31,9 @@ alias cdh='cd ~/Desktop/HBase'
 # プロンプトの設定
 export PS1='\e[32m\][\w]  \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
 export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH:/Users/caterpillar/scala/scala-2.12.5/bin
-
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=/usr/local/var/nodebrew

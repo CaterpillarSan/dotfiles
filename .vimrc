@@ -10,6 +10,7 @@ set shiftwidth=4
 set clipboard+=unnamed
 set number
 set cursorline
+set hlsearch
 " " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " " Don't write backup file if vim is being called by "chpass"
@@ -35,6 +36,8 @@ noremap <C-j> <C-d>
 imap	<C-j>	<esc>
 " USkey対策 ; -> :
 noremap ; :
+" ハイライト解除
+noremap <C-m> :noh<CR>
 
 " マウス操作設定
 set mouse=a					   "マウス使用可能
@@ -216,5 +219,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " *********************************************:
 
 let g:prettier#autoformat = 0
-let g:prettier#exec_cmd_path = "/usr/local/var/nodebrew/node/v10.8.0/lib/node_modules/prettier"
-autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+" let g:prettier#exec_cmd_path = "/usr/local/var/nodebrew/node/v10.8.0/lib/node_modules/prettier"
+autocmd BufWritePre *.js,*.jsx,*.ts,*.vue,*.css,*.scss,*.json PrettierAsync
