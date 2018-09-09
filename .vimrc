@@ -10,6 +10,7 @@ set shiftwidth=4
 set clipboard+=unnamed
 set number
 set cursorline
+set cursorcolumn
 set hlsearch
 " " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
@@ -20,11 +21,12 @@ syntax on
 " 色の設定
 colorscheme molokai
 highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=236
 highlight Cursor ctermfg=green ctermbg=NONE
 highlight Comment ctermfg=35
 highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
 highlight Number ctermfg=202
-
+autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 " キーバインドの設定
 " 左端,右端に移動
 noremap <C-h>	^
