@@ -32,6 +32,16 @@ noremap <C-h>	^
 noremap <C-l>	$
 noremap <C-k> <C-u>
 noremap <C-j> <C-d>
+" ペイン移動
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+
+nnoremap sn gt
+nnoremap sm gT
+
 " escapeをC+jに
 "noremap <C-j>	<esc>
 imap	<C-j>	<esc>
