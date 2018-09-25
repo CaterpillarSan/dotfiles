@@ -42,6 +42,9 @@ nnoremap sh <C-w>h
 nnoremap sn gt
 nnoremap sm gT
 
+" 勝手に小文字にならないで欲しい
+vmap u <esc> 
+
 " escapeをC+jに
 "noremap <C-j>	<esc>
 imap	<C-j>	<esc>

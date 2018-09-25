@@ -29,6 +29,7 @@ alias cdr='cd /Users/caterpillar/Desktop/MyCodes/ronbun'
 alias cdd='cd ~/Desktop/DCatch'
 alias cdh='cd ~/Desktop/HBase'
 alias cdf='cd /Users/caterpillar/go/src/github.com/VG-Tech-Dojo/treasure2018-group-f'
+alias cdgo='cd ~/go/src/github.com/CaterpillarSan'
 # プロンプトの設定
 export PS1='\e[32m\][\w]  \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
 export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH:/Users/caterpillar/scala/scala-2.12.5/bin
