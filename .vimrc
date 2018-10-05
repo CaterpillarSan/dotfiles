@@ -15,17 +15,6 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 syntax on
 
-" 色の設定
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
-highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
-highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=236
-highlight Cursor ctermfg=green ctermbg=NONE
-highlight Comment ctermfg=35
-highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
-highlight Number ctermfg=202
-autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 " キーバインドの設定
 " 左端,右端に移動
 noremap <C-h>	^
@@ -89,7 +78,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'fatih/vim-go'
+NeoBundle 'fatih/vim-go',  { 'do': ':GoInstallBinaries' }
 NeoBundle 'prettier/vim-prettier'
 NeoBundle 'AndrewRadev/splitjoin'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -99,6 +88,20 @@ call neobundle#end()
 
 
 filetype plugin indent on
+
+" *********************************************:
+" * lightline環境
+" *********************************************:
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
+highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=236
+highlight Cursor ctermfg=green ctermbg=NONE
+highlight Comment ctermfg=35
+highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
+highlight Number ctermfg=202
+autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 
 " *********************************************:
 " * lightline環境
