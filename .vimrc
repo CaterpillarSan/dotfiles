@@ -278,6 +278,7 @@ endfunction
 
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
+let g:go_fmt_command = "goimports"
 let g:go_highlight_function_calls = 1
 let g:go_auto_sameids = 1
 let g:go_play_browser_command = "chrome"

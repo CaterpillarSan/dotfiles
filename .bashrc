@@ -22,20 +22,28 @@ alias javassist='java -classpath ".:./javassist.jar"'
 alias javacsim=' javac -classpath ".:cloudsim_jar/cloudsim.jar"'
 alias javasim=' java -classpath ".:cloudsim_jar/cloudsim.jar"'
 
+# git
+alias dbranch='git branch --merged | grep -v '*' | xargs -I % git branch -d %'
 
 # cd
-alias cds='cd /Users/caterpillar/Desktop/Simulation'
+alias cds='cd /Users/caterpillar/scala/simulator'
 alias cdr='cd /Users/caterpillar/Desktop/MyCodes/ronbun'
 alias cdd='cd ~/Desktop/DCatch'
 alias cdh='cd ~/Desktop/HBase'
 alias cdf='cd /Users/caterpillar/go/src/github.com/VG-Tech-Dojo/treasure2018-group-f'
 alias cdgo='cd ~/go/src/github.com/CaterpillarSan'
-# プロンプトの設定
-export PS1='\e[32m\][\w]  \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
-export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH:/Users/caterpillar/scala/scala-2.12.5/bin
+
+# bashの表示のやつ
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\e[32m\][\w] \e[31m\]$(__git_ps1 [%s]) \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
+
+# PATHまわり
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
+export NODEBREW_ROOT=/usr/local/var/nodebrew
 export PATH=$PATH:$GOPATH/bin
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
-export NODEBREW_ROOT=/usr/local/var/nodebrew
+export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH
+export PATH=/Users/caterpillar/scala/scala-2.12.5/bin:$PATH
+export PATH=/usr/local/Cellar/git/2.19.0_2/bin:$PATH
