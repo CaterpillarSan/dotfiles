@@ -23,7 +23,7 @@ alias javacsim=' javac -classpath ".:cloudsim_jar/cloudsim.jar"'
 alias javasim=' java -classpath ".:cloudsim_jar/cloudsim.jar"'
 
 # git
-alias dbranch='git branch --merged | grep -v '*' | xargs -I % git branch -d %'
+alias git-dbranch='git branch --merged | grep -v '*' | xargs -I % git branch -d %'
 
 # cd
 alias cds='cd /Users/caterpillar/scala/simulator'
