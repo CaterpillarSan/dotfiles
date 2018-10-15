@@ -114,7 +114,7 @@ let lightline = {
 		\ 'colorscheme': 'wombat',
 		\ 'mode_map': {'c': 'NORMAL'},
 		\ 'active': {
-		\	'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+		\	'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'absolutepath', 'modified' ] ]
 		\ },
 		\ 'component_function': {
 		\	'modified': 'LightlineModified',
@@ -124,7 +124,8 @@ let lightline = {
 		\	'fileformat': 'LightlineFileformat',
 		\	'filetype': 'LightlineFiletype',
 		\	'fileencoding': 'LightlineFileencoding',
-		\	'mode': 'LightlineMode'
+		\	'mode': 'LightlineMode',
+        \   'absolutepath': 'AbsolutePath'
 		\ }
 		\ }
 
@@ -168,6 +169,17 @@ endfunction
 function! LightlineMode()
 	return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+ function! AbsolutePath()
+    let a = substitute(expand('%:p'), $HOME, '~', '')
+    if a == ""
+      return '🗒'
+    elseif strlen(a) > 40
+      return a[strlen(a)-40:]
+    else
+      return a
+    endif
+  endfunction
 
 " *********************************************:
 " * caw 環境(コメントアウト)
