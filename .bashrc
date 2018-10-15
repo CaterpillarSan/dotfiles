@@ -2,9 +2,9 @@
 
 # エイリアスの設定
 # ls（カラー表示）
-alias ls='ls -G'
-alias ll='ls -lG'
-alias la='ls -laG'
+alias ls='ls -GF'
+alias ll='ls -lGF'
+alias la='ls -laGF'
 
 cd () {
 	builtin cd "$@" && ls

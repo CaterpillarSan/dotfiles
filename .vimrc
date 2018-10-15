@@ -90,11 +90,13 @@ call neobundle#end()
 filetype plugin indent on
 
 " *********************************************:
-" * lightline環境
+" * Colorscheme
 " *********************************************:
 let g:rehash256 = 1
 let g:molokai_original = 1
-colorscheme molokai
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+
 highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
 highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=236
 highlight Cursor ctermfg=green ctermbg=NONE
@@ -102,6 +104,8 @@ highlight Comment ctermfg=35
 highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
 highlight Number ctermfg=202
 autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
+
+colorscheme molokai
 
 " *********************************************:
 " * lightline環境
