@@ -16,6 +16,8 @@ fi
 # Bash completion
 brew install bash-completion
 brew install git
+brew install reattach-to-user-namespace
+brew install fzf
 
 # Vim with lua
 brew install vim --with-lua --with-override-system-vi
