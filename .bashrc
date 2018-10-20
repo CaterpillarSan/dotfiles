@@ -26,11 +26,11 @@ alias javasim=' java -classpath ".:cloudsim_jar/cloudsim.jar"'
 alias git-dbranch='git branch --merged | grep -v '*' | xargs -I % git branch -d %'
 
 # cd
-alias cds='cd /Users/caterpillar/scala/simulator'
-alias cdr='cd /Users/caterpillar/Desktop/MyCodes/ronbun'
+alias cds='cd ~/scala/simulator'
+alias cdr='cd ~/Desktop/MyCodes/ronbun'
 alias cdd='cd ~/Desktop/DCatch'
 alias cdh='cd ~/Desktop/HBase'
-alias cdf='cd /Users/caterpillar/go/src/github.com/VG-Tech-Dojo/treasure2018-group-f'
+alias cdf='cd ~/go/src/github.com/VG-Tech-Dojo/treasure2018-group-f'
 alias cdgo='cd ~/go/src/github.com/CaterpillarSan'
 
 # bashの表示のやつ

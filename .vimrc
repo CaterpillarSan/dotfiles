@@ -29,8 +29,8 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
-nnoremap sn gt
-nnoremap sm gT
+nnoremap <S-l> gt
+nnoremap <S-h> gT
 
 " 勝手に小文字にならないで欲しい
 vmap u <esc> 
