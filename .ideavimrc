@@ -17,8 +17,11 @@ noremap ; :
 " 検索をIDEA純正に
 nnoremap / :<C-u>action Find<CR>
 
+" 保存時にフォーマット
+noremap f :<C-u>action ReformatCode<CR>
+
 " クリップボード
 set clipboard=unnamed,unnamedplus
 
-" インサートモードから抜けると自動的にIMEをオフにする
+" インサートモードから抜けると自動的にIM Eをオフにする
 set iminsert=2
