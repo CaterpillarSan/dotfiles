@@ -36,6 +36,7 @@ alias cdgo='cd ~/go/src/github.com/CaterpillarSan'
 # bashの表示のやつ
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\e[32m\][\w] \e[31m\]$(__git_ps1 [%s]) \e[36m\]\n( ＾∀＾) \[\e[0m\] \$ '
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # PATHまわり
 export GOPATH=$HOME/go

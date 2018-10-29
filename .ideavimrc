@@ -3,6 +3,22 @@ noremap <C-j>   <esc>
 imap    <C-j>   <esc>
 
 " 左端, 右端に移動
-noremap <S-h>   ^
-noremap <S-l>   $
+noremap <C-h>	^
+noremap <C-l>	$
+noremap <C-k> <C-u>
+noremap <C-j> <C-d>
 
+" 勝手に置換されないように
+vmap u <esc> 
+
+" US key対策
+noremap ; :
+
+" 検索をIDEA純正に
+nnoremap / :<C-u>action Find<CR>
+
+" クリップボード
+set clipboard=unnamed,unnamedplus
+
+" インサートモードから抜けると自動的にIMEをオフにする
+set iminsert=2
