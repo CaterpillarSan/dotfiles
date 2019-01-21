@@ -130,6 +130,7 @@ NeoBundle 'AndrewRadev/splitjoin'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'tarekbecker/vim-yaml-formatter'
 call neobundle#end()
 
 
