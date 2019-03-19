@@ -36,3 +36,7 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
 cp -r ~/dotfiles/vim ~/.vim
 cp -r ~/dotfiles/tmux ~/.tmux
+
+
+# benri softs
+brew install bat tree cmake gnu-sed ctags
