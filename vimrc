@@ -131,6 +131,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'tarekbecker/vim-yaml-formatter'
+NeoBundle 'Shougo/vinarise'
 call neobundle#end()
 
 
@@ -387,3 +388,15 @@ let g:tagbar_type_go = {
 
 " Open Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" *********************************************:
+" * Vinariser 環境
+" *********************************************:
+
+augroup BinaryXXD
+	autocmd!
+	autocmd BufReadPre  *.bin let &binary =1
+	autocmd BufReadPost * if &binary | Vinarise
+	autocmd BufWritePre * if &binary | Vinarise | endif
+	autocmd BufWritePost * if &binary | Vinarise 
+augroup END

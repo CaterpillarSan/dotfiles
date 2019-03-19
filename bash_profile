@@ -29,3 +29,4 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source ~/.kube/completion.bash.inc
 fi
 
+eval "$(rbenv init -)"

@@ -18,6 +18,7 @@ brew install bash-completion
 brew install git
 brew install reattach-to-user-namespace
 brew install fzf
+brew install gnu-sed
 
 # Vim with lua
 brew install vim --with-lua --with-override-system-vi
@@ -26,10 +27,12 @@ brew install vim --with-lua --with-override-system-vi
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # alias
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
-ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-cp -r ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/bash_profile ~/.bash_profile
+ln -s ~/dotfiles/bashrc ~/.bashrc
+ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/dotfiles/ideavimrc ~/.ideavimrc
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
+cp -r ~/dotfiles/vim ~/.vim
+cp -r ~/dotfiles/tmux ~/.tmux

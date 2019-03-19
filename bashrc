@@ -5,12 +5,12 @@
 alias ls='ls -GF'
 alias ll='ls -lGF'
 alias la='ls -laGF'
+alias sed='gsed'
+alias ocaml="rlwrap ocaml"
 
 cd () {
 	builtin cd "$@" && ls
 }
-
-alias classname='command ls Jikken | grep -o .*\.class | sed -e s/.class//g | tr '\n'' 
 
 # java
 alias javassistc='javac -classpath ".:./javassist.jar"'
@@ -48,3 +48,5 @@ export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH
 export PATH=/Users/caterpillar/scala/scala-2.12.5/bin:$PATH
 export PATH=/usr/local/Cellar/git/2.19.0_2/bin:$PATH
+export PATH=$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/wabt/out/clang/Debug:$PATH
