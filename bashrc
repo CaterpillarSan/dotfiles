@@ -44,6 +44,7 @@ export GOBIN=$HOME/go/bin
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 export PATH=$PATH:$GOPATH/bin
 export PATH=/usr/local/opt/openssl/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/2.7.14_2/bin:$PATH
 export PATH=/Users/caterpillar/scala/scala-2.12.5/bin:$PATH

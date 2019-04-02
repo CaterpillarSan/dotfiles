@@ -19,6 +19,12 @@ brew install git
 brew install reattach-to-user-namespace
 brew install fzf
 brew install gnu-sed
+# font
+brew tap sanemat/font
+brew install ricty
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts
+fc-cache -vf
+
 
 # Vim with lua
 brew install vim --with-lua --with-override-system-vi
