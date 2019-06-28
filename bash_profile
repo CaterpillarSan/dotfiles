@@ -30,3 +30,4 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"

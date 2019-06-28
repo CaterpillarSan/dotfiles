@@ -10,6 +10,8 @@ set cursorline
 set cursorcolumn
 set hlsearch
 set showtabline=2
+let g:tex_conceal=''
+set concealcursor=""
 " " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " " Don't write backup file if vim is being called by "chpass"
@@ -116,6 +118,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " 以下プラグイン
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'fatih/molokai'
+NeoBundle 'vim-scripts/twilight'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -126,7 +129,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fatih/vim-go',  { 'do': ':GoInstallBinaries' }
 NeoBundle 'prettier/vim-prettier'
-NeoBundle 'AndrewRadev/splitjoin'
+" NeoBundle 'AndrewRadev/splitjoin'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jistr/vim-nerdtree-tabs'
@@ -153,7 +156,8 @@ highlight Visual term=reverse cterm=reverse ctermfg=darkcyan ctermbg=black
 highlight Number ctermfg=202
 autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 
-colorscheme molokai
+colorscheme molokai 
+autocmd FileType tex colorscheme twilight
 
 " *********************************************:
 " * lightline環境
@@ -311,7 +315,7 @@ let NERDTreeShowHidden = 1
 let g:nerdtree_tabs_open_on_console_startup=1
 " let g:nerdtree_tabs_startup_cd=0
 map <S-n> :NERDTreeTabsToggle<CR>
-let NERDTreeIgnore = ['\.class$']
+let NERDTreeIgnore = ['\.class$','\.swp$','\.pdf','^.git$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " *********************************************:
