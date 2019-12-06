@@ -119,6 +119,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'fatih/molokai'
 NeoBundle 'vim-scripts/twilight'
+NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tyru/caw.vim'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -157,7 +158,7 @@ highlight Number ctermfg=202
 autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 
 colorscheme molokai 
-autocmd FileType tex colorscheme twilight
+autocmd FileType tex colorscheme jellybeans
 
 " *********************************************:
 " * lightline環境
