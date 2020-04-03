@@ -42,6 +42,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 export NODEBREW_ROOT=/usr/local/var/nodebrew
+
 export PATH=$PATH:$GOPATH/bin
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=/usr/local/bin:$PATH

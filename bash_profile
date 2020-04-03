@@ -26,8 +26,12 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
   # kubectl shell completion
-  source ~/.kube/completion.bash.inc
+  if [ ! ! `which kubectl` ]; then
+   source ~/.kube/completion.bash.inc
+  fi
 fi
 
-eval "$(rbenv init -)"
+if [ ! ! `which rbenv` ]; then
+  eval "$(rbenv init -)"
+fi
 export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"

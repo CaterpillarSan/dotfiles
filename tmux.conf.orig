@@ -22,35 +22,40 @@ set -g window-style 'fg=colour247,bg=colour233'
 set -g window-active-style 'fg=colour250,bg=black'
  
 #pane border
-set -g pane-border-style bg=colour235,fg=colour238
-set -g pane-active-border-style bg=colour236,fg=colour51
+set -g pane-border-bg colour235
+set -g pane-border-fg colour238
+set -g pane-active-border-bg colour236
+set -g pane-active-border-fg colour51
 # ステータスバーを Utf-8 に対応
 #set-option -g status-utf8 on
 
-# 更新頻度
+# ステータスバーを1秒毎に描画し直す
 set-option -g status-interval 1
+
 # センタライズ（主にウィンドウ番号など）
 set-option -g status-justify centre
+
 # キーストロークのディレイを減らす
 set -sg escape-time 0
+
 # ウィンドウのインデックスを1から始める
 set -g base-index 1
+
 # ペインのインデックスを1から始める
 setw -g pane-base-index 1
 
 # Prefix+- で横に、Prefix+| で縦に分割（ペイン）する
-bind-key '|' split-window -h -c '#{pane_current_path}'
-bind-key \\ split-window -h -c '#{pane_current_path}'
+bind-key | split-window -h -c '#{pane_current_path}'
+bind-key \ split-window -h -c '#{pane_current_path}'
 bind-key - split-window -v -c '#{pane_current_path}'
 bind-key g display-panes
-set -g display-panes-time 40000
+set display-panes-time 40000
 
 # ペインの移動
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
-
 
 # prefixキー変更
 set-option -g prefix C-a 
@@ -60,10 +65,6 @@ bind-key C-a send-prefix
 
 # キーをviバインドに
 set-window-option -g mode-keys vi
-bind-key -T copy-mode-vi C-h send-keys -X start-of-line
-bind-key -T copy-mode-vi C-l send-keys -X end-of-line
-bind-key -T copy-mode-vi C-j send-keys -X halfpage-up
-bind-key -T copy-mode-vi C-k send-keys -X halfpage-down
 
 # マウス設定
 set -g mouse on

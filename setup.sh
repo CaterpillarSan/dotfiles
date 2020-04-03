@@ -13,6 +13,7 @@ if [ ! `which tmux`]; then
 	brew install tmux
 fi
 
+
 # Bash completion
 brew install bash-completion
 brew install git
@@ -42,6 +43,10 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
 cp -r ~/dotfiles/vim ~/.vim
 cp -r ~/dotfiles/tmux ~/.tmux
+
+# tmux-plugins
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 # benri softs
