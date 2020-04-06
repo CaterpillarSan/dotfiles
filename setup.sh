@@ -51,3 +51,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # benri softs
 brew install bat tree cmake gnu-sed ctags
+
+# ssh TODO 
+mkdir ~/.ssh
+touch ~/.ssh/config
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
