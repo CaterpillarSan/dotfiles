@@ -2,8 +2,8 @@
 
 # Check Homebrew
 if [ ! `which brew`]; then
-	echo "please install Homebrew"
-	exit 1
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	brew -v || (echo "Failed to install brew." && exit 1)
 fi
 
 brew doctor
@@ -40,6 +40,7 @@ ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/dotfiles/ideavimrc ~/.ideavimrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/eslintrc.json ~/.eslintrc.json
 ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
 cp -r ~/dotfiles/vim ~/.vim
 cp -r ~/dotfiles/tmux ~/.tmux

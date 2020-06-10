@@ -4,7 +4,12 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-if [[ ! -n $TMUX ]]; then
+if [ -f ~/.bash_env ] ; then
+. ~/.bash_env
+fi
+
+
+if [[ ! -n $TMUX ]] && [[ $VSCODE_PID == "" ]] ; then
   # get the IDs
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
@@ -23,15 +28,11 @@ $ID"
     :  # Start terminal normally
   fi
 fi
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
   # kubectl shell completion
-  if [ ! ! `which kubectl` ]; then
+  if [ -f ~/.kube/completion.bash.inc ]; then
    source ~/.kube/completion.bash.inc
   fi
 fi
-
-if [ ! ! `which rbenv` ]; then
-  eval "$(rbenv init -)"
-fi
-export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"

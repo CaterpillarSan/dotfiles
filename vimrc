@@ -128,7 +128,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'fatih/vim-go',  { 'do': ':GoInstallBinaries' }
+" NeoBundle 'fatih/vim-go',  { 'do': ':GoInstallBinaries' }
 NeoBundle 'prettier/vim-prettier'
 " NeoBundle 'AndrewRadev/splitjoin'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -136,6 +136,16 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'tarekbecker/vim-yaml-formatter'
 NeoBundle 'Shougo/vinarise'
+
+
+NeoBundle 'prabirshrestha/async.vim'
+NeoBundle 'prabirshrestha/asyncomplete.vim'
+NeoBundle 'prabirshrestha/asyncomplete-lsp.vim'
+NeoBundle 'prabirshrestha/vim-lsp'
+NeoBundle 'mattn/vim-lsp-settings'
+NeoBundle 'mattn/vim-goimports'
+
+
 call neobundle#end()
 
 
@@ -331,32 +341,46 @@ autocmd BufWritePre *.js,*.jsx,*.ts,*.vue,*.css,*.scss,*.json PrettierAsync
 " *********************************************:
 " * vim-go環境
 " *********************************************:
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
-map <C-g>d :GoDeclsDir<CR>
+" map <C-n> :cnext<CR>
+" map <C-m> :cprevious<CR>
+" nnoremap <leader>a :cclose<CR>
+" map <C-g>d :GoDeclsDir<CR>
+" 
+" autocmd FileType go nmap <leader>r  <Plug>(go-run)
+" autocmd FileType go nmap <Leader>i <Plug>(go-info)
+" 
+" " run :GoBuild or :GoTestCompile based on the go file
+" function! s:build_go_files()
+"   let l:file = expand('%')
+"   if l:file =~# '^\f\+_test\.go$'
+"     call go#test#Test(0, 1)
+"   elseif l:file =~# '^\f\+\.go$'
+"     call go#cmd#Build(0)
+"   endif
+" endfunction
+" 
+" autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+" 
+" let g:go_fmt_command = "goimports"
+" let g:go_highlight_function_calls = 1
+" let g:go_auto_sameids = 1
+" let g:go_play_browser_command = "chrome"
+"
+"" *********************************************:
+" * vim-go環境
+" *********************************************:
+nmap <silent> gd :LspDefinition<CR>
+nmap <silent> <f2> :LspRename<CR>
+nmap <silent> <Leader>d :LspTypeDefinition<CR>
+nmap <silent> <Leader>r :LspReferences<CR>
+nmap <silent> <Leader>i :LspImplementation<CR>
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_popup_delay = 200
+let g:lsp_text_edit_enabled = 0
 
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
-" run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-
-let g:go_fmt_command = "goimports"
-let g:go_highlight_function_calls = 1
-let g:go_auto_sameids = 1
-let g:go_play_browser_command = "chrome"
-
-
+" 
 " *********************************************:
 " * tagbar 環境
 " *********************************************:
