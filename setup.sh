@@ -20,6 +20,7 @@ brew install git
 brew install reattach-to-user-namespace
 brew install fzf
 brew install gnu-sed
+brew install tmuxinator
 # font
 brew tap sanemat/font
 brew install ricty

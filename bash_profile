@@ -9,15 +9,14 @@ if [ -f ~/.bash_env ] ; then
 fi
 
 
-if [[ ! -n $TMUX ]] && [[ $VSCODE_PID == "" ]] ; then
+if [[ ! -n $TMUX ]] && [[ ! $TERM_PROGRAM == "vscode" ]] ; then
   # get the IDs
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
     tmux new-session
   fi
   new="new"
-  ID="$new:
-$ID"
+  ID="$new:$ID"
   ID="`echo "$ID" | fzf | cut -d: -f1`"
   echo "$ID"
   if [[ $ID = $new ]]; then
