@@ -5,6 +5,7 @@ set backspace=2		" more powerful backspacing
 set tabstop=4		" tab = 4 space"
 set shiftwidth=4
 set clipboard+=unnamed
+set clipboard+=unnamedplus
 set number
 set cursorline
 set cursorcolumn
