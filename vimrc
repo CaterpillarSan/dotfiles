@@ -146,6 +146,8 @@ NeoBundle 'prabirshrestha/vim-lsp'
 NeoBundle 'mattn/vim-lsp-settings'
 NeoBundle 'mattn/vim-goimports'
 
+NeoBundle 'knsh14/vim-github-link'
+NeoBundle 'APZelos/blamer.nvim'
 
 call neobundle#end()
 
@@ -430,3 +432,7 @@ augroup BinaryXXD
 	autocmd BufWritePre * if &binary | Vinarise | endif
 	autocmd BufWritePost * if &binary | Vinarise 
 augroup END
+
+vnoremap gy :GetCurrentCommitLink<CR>
+let g:blamer_date_format = '%y/%m/%d'
+

@@ -22,7 +22,7 @@ if [ $1 = 'macos' ]; then
 	brew install git
 	brew install reattach-to-user-namespace
 	brew install fzf
-	brew install gnu-sed
+	brew install gnu-sed coreutils
 	brew install tmuxinator
 	# font
 	brew tap sanemat/font
@@ -49,6 +49,10 @@ else
 fi
 ## Neobundle
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+## bash completion
+wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
 # alias
 ln -s ~/dotfiles/bash_profile ~/.bash_profile
