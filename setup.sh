@@ -3,10 +3,11 @@
 OS=undefined
 if [ `uname` == 'Darwin' ]; then
   OS=Mac
-elif [ `expr substr $(uname -s) 1 5` eq 'Linux']; then
+elif [ `uname -s` == 'Linux' ]; then
   OS=Linux # TODO Ubuntu, CentOS
 fi
 
+echo $OS
 
 if [ $OS == 'Mac' ]; then
 	# Mac OS
@@ -45,7 +46,7 @@ if [ $OS == 'Mac' ]; then
 	# GUI
   brew install --cask karabiner-elements google-chrome
 
-elif [ OS eq "Linux" ]; then
+elif [ $OS == 'Linux' ]; then
 	apt update
 	apt upgrade
 	apt install bash-completion
@@ -74,14 +75,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # ln -s ~/dotfiles/bash_alias ~/.bash_alias
 # ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 # ln -s ~/dotfiles/ideavimrc ~/.ideavimrc
-# ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 # ln -s ~/dotfiles/tmux.conf.macos ~/.tmux.conf.macos
 # ln -s ~/dotfiles/tmux.conf.ubuntu ~/.tmux.conf.ubuntu
-# ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vimrc ~/.vimrc
 # ln -s ~/dotfiles/eslintrc.json ~/.eslintrc.json
 # ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
-# cp -r ~/dotfiles/vim ~/.vim
-# cp -r ~/dotfiles/tmux ~/.tmux
+cp -r ~/dotfiles/vim ~/.vim
+cp -r ~/dotfiles/tmux ~/.tmux
 # touch ~/.bash_env
 
 # tmux-plugins
