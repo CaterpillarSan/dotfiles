@@ -1,9 +1,14 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " share with OS clipboard
 set clipboard=unnamed,unnamedplus
 
 " vim setting
 set timeout timeoutlen=1000 ttimeoutlen=50
 set wildmenu
+set fileformats=unix,dos,mac
+set ambiwidth=double
 
 " Line
 set number
@@ -56,10 +61,12 @@ noremap <leader>x :noh<CR>
 
 " ***** Plugins
 call plug#begin()
+  Plug 'knsh14/vim-github-link'
+  Plug 'zivyangll/git-blame.vim'
   Plug 'github/copilot.vim'
   Plug 'kien/ctrlp.vim'
   Plug 'mattn/ctrlp-matchfuzzy'
-  Plug 'fatih/molokai'
+  Plug 'tomasr/molokai'
   Plug 'itchyny/lightline.vim'
   Plug 'tyru/caw.vim'
   Plug 'preservim/nerdtree'
@@ -120,3 +127,7 @@ augroup BinaryXXD
 	autocmd BufWritePre * if &binary | Vinarise | endif
 	autocmd BufWritePost * if &binary | Vinarise
 augroup END
+
+" Git
+vmap gy :GetCurrentBranchLink<CR>
+nnoremap <Leader>g :<C-u>call gitblame#echo()<CR>
