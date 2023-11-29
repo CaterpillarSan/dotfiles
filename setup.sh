@@ -70,6 +70,15 @@ asdf plugin add golang
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+## git
+curl -o ~/.git-completion.sh \
+    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o ~/.git-prompt.sh \
+    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
+chmod +x ~/.git-completion.sh
+chmod +x ~/.git-prompt.sh
+
 # alias
 # ln -s ~/dotfiles/bash_profile ~/.bash_profile
 # ln -s ~/dotfiles/bash_alias ~/.bash_alias
