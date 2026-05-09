@@ -1,0 +1,22 @@
+font-family = SF Mono
+font-size = 13
+theme = One Dark
+scrollback-limit = 50000000
+split-divider-color = #3e4451
+working-directory = ~/work
+
+keybind = super+shift+h=goto_split:left
+keybind = super+shift+j=goto_split:down
+keybind = super+shift+k=goto_split:up
+keybind = super+shift+l=goto_split:right
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-style-blink = false
+resize-overlay = never
+window-padding-x = 8
+window-padding-y = 4
