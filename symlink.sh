@@ -12,7 +12,7 @@ link() {
 
 link zshrc                                              ~/.zshrc
 link vimrc                                              ~/.vimrc
-link gitignore_global                                   ~/.gitignore_global
+link gitignore_global                                   ~/.config/git/ignore
 link ideavimrc                                          ~/.ideavimrc
 link eslintrc.json                                      ~/.eslintrc.json
 link ocamlinit                                          ~/.ocamlinit
