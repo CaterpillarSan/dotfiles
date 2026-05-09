@@ -92,6 +92,14 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 # ln -s ~/dotfiles/ocamlinit ~/.ocamlinit
 cp -r ~/dotfiles/vim ~/.vim
 cp -r ~/dotfiles/tmux ~/.tmux
+
+# ghostty
+mkdir -p ~/.config/ghostty
+ln -sf ~/dotfiles/config/ghostty/config ~/.config/ghostty/config
+
+# cmux
+mkdir -p ~/.config/cmux
+ln -sf ~/dotfiles/config/cmux/cmux.json ~/.config/cmux/cmux.json
 # touch ~/.bash_env
 
 # tmux-plugins
