@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DOTFILES="$HOME/dotfiles"
+
+link() {
+  local src="$DOTFILES/$1"
+  local dst="$2"
+  mkdir -p "$(dirname "$dst")"
+  ln -sf "$src" "$dst"
+  echo "linked: $dst"
+}
+
+link zshrc                                              ~/.zshrc
+link vimrc                                              ~/.vimrc
+link gitignore_global                                   ~/.gitignore_global
+link ideavimrc                                          ~/.ideavimrc
+link eslintrc.json                                      ~/.eslintrc.json
+link ocamlinit                                          ~/.ocamlinit
+link config/ghostty/config                              ~/.config/ghostty/config
+link config/cmux/cmux.json                              ~/.config/cmux/cmux.json
+link config/karabiner.json                              ~/.config/karabiner/karabiner.json
+link config/assets/complex_modifications/1540804198.json \
+     ~/.config/karabiner/assets/complex_modifications/1540804198.json
