@@ -34,3 +34,10 @@ PROMPT='%F{green}[%~]%f %F{red}${vcs_info_msg_0_}%f
 
 # LSCOLORS
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# PATH
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
