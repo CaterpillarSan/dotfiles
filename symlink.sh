@@ -18,4 +18,3 @@ link eslintrc.json                                      ~/.eslintrc.json
 link ocamlinit                                          ~/.ocamlinit
 link config/ghostty/config                              ~/.config/ghostty/config
 link config/cmux/cmux.json                              ~/.config/cmux/cmux.json
-link config/karabiner.json                              ~/.config/karabiner/karabiner.json
