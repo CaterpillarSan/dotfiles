@@ -6,6 +6,7 @@ alias ll='ls -lGF'
 alias la='ls -laGF'
 alias sed='gsed'
 alias which='whence -a'
+alias vim='nvim'
 alias kube='kubectl'
 alias bx='bundle exec'
 alias ocaml="rlwrap ocaml"
@@ -19,7 +20,7 @@ cd() {
 bindkey -v
 
 # エディタ
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # プロンプト (git ブランチ + dirty state 表示)
 autoload -Uz vcs_info
