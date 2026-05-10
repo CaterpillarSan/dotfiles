@@ -8,6 +8,7 @@ alias sed='gsed'
 alias which='whence -a'
 alias vim='nvim'
 alias kube='kubectl'
+alias lg='lazygit'
 alias bx='bundle exec'
 alias ocaml="rlwrap ocaml"
 
@@ -42,3 +43,29 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# ヒストリ
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
+
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Tab: 候補があれば accept、なければ通常補完
+_autosuggest_or_complete() {
+  if [[ -n $POSTDISPLAY ]]; then
+    zle autosuggest-accept
+  else
+    zle expand-or-complete
+  fi
+}
+zle -N _autosuggest_or_complete
+bindkey '\t' _autosuggest_or_complete
+
+# zsh-syntax-highlighting (must be last)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zoxide (z コマンド)
+eval "$(zoxide init zsh)"

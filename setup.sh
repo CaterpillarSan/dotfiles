@@ -79,6 +79,15 @@ curl -o ~/.git-prompt.sh \
 chmod +x ~/.git-completion.sh
 chmod +x ~/.git-prompt.sh
 
+# delta (git diff pager)
+git config --global core.pager delta
+git config --global interactive.diffFilter "delta --color-only"
+git config --global delta.navigate true
+git config --global delta.side-by-side true
+git config --global delta.line-numbers true
+git config --global merge.conflictstyle diff3
+git config --global diff.colorMoved default
+
 # alias
 # ln -s ~/dotfiles/bash_profile ~/.bash_profile
 # ln -s ~/dotfiles/bash_alias ~/.bash_alias
