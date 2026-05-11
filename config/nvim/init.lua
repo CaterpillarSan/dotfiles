@@ -36,6 +36,13 @@ vim.call('plug#begin', vim.fn.stdpath('data') .. '/plugged')
   -- CtrlP → telescope
   Plug('nvim-telescope/telescope.nvim', { tag = '0.1.8' })
   Plug 'nvim-lua/plenary.nvim'
+  Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+
+  -- treesitter
+  Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+
+  -- gitsigns
+  Plug 'lewis6991/gitsigns.nvim'
 
   -- LSP server manager (nvim-lspconfig は Neovim 0.11+ では不要)
   Plug 'williamboman/mason.nvim'
@@ -210,9 +217,43 @@ end
 -- ============================================================
 local ok_telescope, builtin = pcall(require, 'telescope.builtin')
 if ok_telescope then
+  local ok_tel, telescope = pcall(require, 'telescope')
+  if ok_tel then
+    telescope.setup({})
+    pcall(telescope.load_extension, 'fzf')
+  end
   map('n', '<C-p>',      builtin.find_files)
   map('n', '<Leader>fg', builtin.live_grep)
   map('n', '<Leader>fb', builtin.buffers)
+end
+
+-- ============================================================
+-- nvim-treesitter
+-- ============================================================
+local ok_ts, tsconfigs = pcall(require, 'nvim-treesitter.configs')
+if ok_ts then
+  tsconfigs.setup({
+    ensure_installed = { 'go', 'lua', 'bash', 'json', 'yaml', 'markdown' },
+    highlight        = { enable = true },
+    indent           = { enable = true },
+  })
+end
+
+-- ============================================================
+-- gitsigns
+-- ============================================================
+local ok_gs, gitsigns = pcall(require, 'gitsigns')
+if ok_gs then
+  gitsigns.setup({
+    on_attach = function(bufnr)
+      local gs = package.loaded.gitsigns
+      local o  = { buffer = bufnr }
+      map('n', ']c', gs.next_hunk,        o)
+      map('n', '[c', gs.prev_hunk,        o)
+      map('n', '<Leader>hp', gs.preview_hunk, o)
+      map('n', '<Leader>hb', gs.blame_line,   o)
+    end,
+  })
 end
 
 -- ============================================================
